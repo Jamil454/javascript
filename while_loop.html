@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While Loop</title>
+    <style>
+        table{
+            background-color: aquamarine;
+            border: 1px solid;
+            border-collapse: collapse;
+            }
+            th, td{ 
+                border: 1px solid;
+              
+
+            }
+    </style>
+</head>
+
+<body>
+    <script>
+
+        const fruits = new Array("Mango", "Apple", "Orange", "Banana");
+
+        let i = 0;
+        let output = "<table>";
+        output += "<tr><th>SN</th><th>Name</th></tr>"
+
+        while (i < fruits.length) {
+            sn = i + 1;
+            output += "<tr><td>" + sn + "</td>";
+            output += "<td>" + fruits[i] + "</td></tr>";
+
+           
+
+            i++;
+        }
+        output += "</table>";
+        document.write(output);
+
+
+        // let i = 1;
+        // let text = "";
+        //  while (i <= 10) {
+        //      text += i + "<br>";
+        //     i++;
+        //  }
+        // document.write(text);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+   <h3>Student Information</h3>
+   <form action="" name="myform">
+
+        <label for="id">Id:</label>
+        <input type="text" name="id" placeholder="Enter id"> <br>
+        <label for="name">Name:</label>
+        <input type="text" name="name" placeholder="enter name"> <br>
+        <label for="course">Course:</label>
+        <input type="text" name="course" placeholder="enter course name"> <br>
+        <label for="year">Year/Section:</label>
+        <input type="text" name="year" placeholder="enter year"> <br>
+
+        <button  type="button" onclick="myFunction()">Submit</button>
+</form>
+    <script>
+        function myFunction(){
+            let id = document.myform.id.value;
+            let name = document.myform.name.value;
+            let course = document.myform.course.value;
+            let year = document.myform.year.value;
+            
+           let mywindow= window.open("","abc","width=800, height=700");
+           
+           let output;
+           output = "<h3> Student Information</h3>";
+           output += "id :" +  id +  "<br>";
+           output += "name :"  +  name +  "<br>";
+           output += "course :" +  course +  "<br>";
+           output += "year :" +  year +  "<br>";
+           mywindow.document.write(output);
+
+
+        }
+    </script>
+</body>
+</html>

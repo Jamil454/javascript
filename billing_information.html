@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="myform">
+        <h2>Billing Information</h2>
+        <fieldset style="width: fit-content;">
+
+            First Name: <input type="text" name="fname" placeholder="Enter First name"> <br> <br>
+            Last Name: <input type="text" name="lname" placeholder="Enter Last name"> <br> <br>
+            Gender: <input type="radio" name="gender" value="male">Male 
+            <input type="radio" name="gender" value="female">Female <br> <br>
+            Language: <input type="radio" name="lang" value="arabic">Arabic 
+                <input type="radio" name="lang" value="Bangla">Bangla 
+                <input type="radio" name="lang" value="English">English <br> <br>
+            Email:<input type="text" name="email" placeholder="Enter Your Mail"> <br> <br>
+            Address: <br>
+                <textarea name="address" placeholder="Enter Address Here"></textarea> <br> <br>
+            State: <select name="state">
+                <option value="hidden">Choose State</option>
+                <option value="Dhaka">Dhaka</option>
+                <option value="Khulna">Khulna</option>
+                <option value="Sylhet">Sylhet</option>
+
+               </select> <br> <br> 
+            Zip Code:<input type="text" name="zip" placeholder="Enter zip code"> <br> <br>
+            Credit Card Type: <select name="card">
+                     <option value="hidden">Choose Credit card</option>
+                    <option value="VisaCard">Visacard</option>
+                    <option value="MasterCard">MasterCard</option>
+                    <option value="DebitCard">DebitCard</option>
+                </select> <br> <br>
+
+            <button onclick="bill()" type="button"> Submit</button>
+        
+        
+        
+        </fieldset>
+    </form>
+
+    <script>
+        function bill(){
+            let name1 = document.myform.fname.value;
+            let name2 = document.myform.lname.value;
+            let gender = document.myform.gender.value;
+            let lang = document.myform.lang.value;
+            let email = document.myform.email.value;
+            let address = document.myform.address.value;
+            let state = document.myform.state.value;
+            let zip = document.myform.zip.value;
+            let card = document.myform.card.value;
+
+            let mywindow = window.open("", "width=500, height=600");
+            let output ;
+            output = "<h1> Billing Information</h1>";
+            output +="First Name:" + name1 + "<br>"
+            output +="last Name:" + name2 + "<br>"
+            output +="Gender:" + gender + "<br>"
+            output +="Language:" + lang + "<br>"
+            output +="email:" + email + "<br>"
+            output +="Address:" + address + "<br>"
+            output +="State:" +state + "<br>"
+            output +="Zip:" + zip + "<br>"
+            output +="card:" + card + "<br>"
+
+            mywindow.document.write(output);
+            
+
+        }
+    </script>
+</body>
+</html>

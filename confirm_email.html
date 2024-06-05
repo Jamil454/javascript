@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div id="display"></div>
-    
+
 
     <form action="" name="myForm">
-        Email:
-        <input type="text" name="email" placeholder="Enter email"> <br>
-     Confirm Email:
-        <input type="text" name="con_email" placeholder="Confirm email"> <br>
-      Password:
-        <input type="password" name="password" placeholder="enter password"> <br>
-        <input type="button" onclick="validate()" name="submit" value="validate"> 
+        Email:<input type="text" name="email" placeholder="Enter email"> <br>
+        Confirm Email:<input type="text" name="con_email" placeholder="Confirm email"> <br>
+        Password:<input type="password" name="password" placeholder="enter password"> <br>
+        <input type="button" onclick="validate()" name="submit" value="validate">
 
     </form>
 
@@ -31,24 +30,26 @@
 
             let pattern = /[A-z0-9]+@[A-z]+\.[a-z]/;
 
-            let result =email1.search(pattern);
+            let result = email1.search(pattern);
 
-            if(result ==-1) {
+            if (result == -1) {
                 alert("not valid");
             }
-            else if (email1!=email2){
+            else if (email1 != email2) {
                 alert("not matched");
             }
-            else if(pass.length<7){
+            else if (pass.length < 7) {
                 alert("not valid");
 
             }
-            else {alert("valid");
+            else {
+                alert("valid");
 
             }
-         }
+        }
 
     </script>
-    
+
 </body>
+
 </html>

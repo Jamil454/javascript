@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" name="dc">
+        <fieldset style="width: fit-content;">
+            Email: <input type="text" name="email" placeholder="enter email"> <br> <br>
+            Confirm Email: <input type="text" name="con_email" placeholder="confirm email"> <br> <br>
+            Password: <input type="password" name="pass" placeholder="enter password"> <br> <br>
+            <button type="button" onclick="emailValidate()">Click</button>
+
+        </fieldset>
+    </form>
+
+    <script>
+
+        const emailValidate = () => {
+            let email = document.dc.email.value;
+            let email2 = document.dc.con_email.value;
+            let pass = document.dc.pass.value;
+
+            let pattern = /[A-z0-9]+@[A-z]+\.[a-z]/;
+            let result = email.search(pattern);
+
+            if (result == -1) {
+                alert("not valid");
+            } 
+            else if (email != email2) {
+                alert("not matched")
+            } else if (pass.length < 8) {
+                alert("password too short")
+
+            } else {
+                alert("valid");
+
+            }
+
+        }
+    </script>
+</body>
+
+</html>

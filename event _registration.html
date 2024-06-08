@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+
+<body>
+    <fieldset style="width: fit-content;">
+        <h3>Event Registration From</h3>
+
+        <div id="show"></div>
+
+        <form action="thank_you.html" name="eform" onsubmit="return eventValid()">
+            Name: <input type="text" name="fname" placeholder="enter first name"> &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="lname" placeholder="enter last name"> <br> <br>
+            Company : <input type="text" name="cname" placeholder="enter company name"> <br> <br>
+            Email:<input type="text" name="email" placeholder="enter email name"> <br> <br>
+            Phone:
+            <select name="phone">
+                <option value="">Select One</option>
+                <option value="+088">+088</option>
+                <option value="+089">+089</option>
+                <option value="+099">+099</option>
+            </select> &nbsp;&nbsp;
+            <input type="text" name="number" placeholder="enter number"> <br> <br>
+            Subject: <select name="subject">
+                <option value="">Select One</option>
+                <option value="PHP">PHP</option>
+                <option value="JAVA">JAVA</option>
+                <option value="HTML">HTML</option>
+            </select> <br> <br>
+
+            Are you an existing customer: <br>
+            <input type="radio" name="a" value="yes">Yes
+            <input type="radio" name="a" value="No">No <br> <br>
+            <button type="submit" onclick="eventValid()">REGISTER</button>
+
+        </form>
+    </fieldset>
+
+    <script>
+        function eventValid() {
+            let fname = document.eform.fname.value;
+            let lname = document.eform.lname.value;
+            let company = document.eform.cname.value;
+            let email = document.eform.email.value;
+            let phone = document.eform.phone.value;
+            let number = document.eform.number.value;
+            let subject = document.eform.subject.value;
+            let a = document.eform.a.value;
+            let pattern = /[A-z0-9]+@[A-z]+\.[A-z]/;
+            let result= email.search(pattern);
+            const errors = [];
+
+            if (fname == "") {
+                errors[errors.length] = "First name can't be empty";
+            }
+
+            if (lname == "") {
+                errors[errors.length] = "Last name can't be empty";
+            }
+            if (company == "") {
+                errors[errors.length] = "Company name can't be empty";
+            }
+            if (email == "") {
+                errors[errors.length] = "Email name can't be empty";
+            }
+            if (result == -1) {
+                errors[errors.length] = "Enter a valid email";
+            }
+            if (phone == "") {
+                errors[errors.length] = "phone name can't be empty";
+            }
+            if (number == "") {
+                errors[errors.length] = "Number name can't be empty";
+            }
+            if (subject == "") {
+                errors[errors.length] = "Subject name can't be empty";
+            }
+            if (a == "") {
+                errors[errors.length] = "Comment  can't be empty";
+            }
+            
+
+            if(errors.length>0){
+                let ErrorOutput = "<ul>";
+            for (let i = 0; i < errors.length; i++) {
+                ErrorOutput += "<li>" + errors[i] + "</li>";
+
+            } ErrorOutput += "</ul>";
+
+            document.getElementById("show").innerHTML = ErrorOutput;
+            return false;
+
+            }else{
+                return true
+            }
+
+        }
+    </script>
+</body>
+
+</html>

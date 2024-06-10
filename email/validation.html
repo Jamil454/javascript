@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="validation.js"></script>
+</head>
+<body>
+   <div id="show"></div>
+   <script>
+    function valid(){
+        let a = prompt("Enter email", "");
+        let obj= new Validation(a);
+        document.getElementById("show").innerHTML=obj.validate();
+    }
+   </script>
+   <button onclick="valid()">Click here</button>
+</body>
+</html>

@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-
-        #result{
+        #result {
             width: 150px;
             height: 30px;
             background-color: aquamarine;
@@ -15,10 +14,12 @@
             padding: 10px;
 
         }
-        .pass{
+
+        .pass {
             color: green;
         }
-        .fail{
+
+        .fail {
             color: red;
         }
     </style>
@@ -33,15 +34,15 @@
         function pass_fail() {
             let mcq = prompt("Enter MCQ Marks", "")
             let decsr = prompt("Enter Describe Marks", "")
-            let evidence = prompt("Enter evidennce Marks", "")
+            let evidence = prompt("Enter evidence Marks", "")
 
             if (mcq >= 80 && decsr >= 60 && evidence >= 60) {
-                //alert("pass");
+
                 document.getElementById("result").innerHTML = "<div class='pass'>Pass</div>";
             }
             else {
-                // alert("fail");
-                document.getElementById("result").innerHTML = "<div class='fail'>Pass</div>";
+
+                document.getElementById("result").innerHTML = "<div class='fail'>Fail</div>";
             }
 
         }

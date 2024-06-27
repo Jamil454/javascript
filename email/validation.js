@@ -4,7 +4,7 @@ class Validation {
     }
 
     validate(){
-        let pattern = /[A-z0-9._]+@[A-z]+\.[A-z]/;
+        let pattern = /[A-z0-9]+@[A-z]+\.[A-z]/;
         if (this.mail.search(pattern) == -1){
             return " E-mail Address is wrong"
         }

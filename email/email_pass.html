@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <form action="" name="abc">
+
+
+        <fieldset style="width: fit-content;">
+
+            <legend>Login/ Registration Form</legend>
+
+            Email: <input type="text" name="email" placeholder="enter mail"> <br> <br>
+            Password: <input type="password" name="pass" placeholder="enter password"> <br> <br>
+            <button type="button" onclick="myD()">Login</button>
+
+        </fieldset>
+    </form>
+
+    <script>
+        class eCheck {
+            constructor(email, password) {
+                this.mail = email;
+                this.nail = password;
+
+            }
+            check() {
+                let j = /[A-zo-9]+@[A-z]+\.[a-z]/;
+                let f = this.mail.search(j);
+
+                if (f == -1) {
+                    alert("email is not valid")
+
+
+                } else if (this.nail.length < 6) {
+                    alert("enter at least 6 character")
+
+                } else {
+                    document.write("Logged in Successful");
+
+                }
+            }
+        }
+
+
+        function myD() {
+            let o = document.abc.email.value;
+            let p = document.abc.pass.value;
+
+
+
+            let s = new eCheck(o, p);
+            s.check();
+        }
+    </script>
+</body>
+
+</html>

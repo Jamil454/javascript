@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Ans to the qu No:01</h2>
+
+    <form action="" name="jform">
+       <fieldset style="width: fit-content;">
+        <h3>Student registration From</h3>
+
+        Name: <input type="text" name="name" placeholder="enter name"> <br> <br>
+        Email: <input type="text" name="email" placeholder="enter email"> <br> <br>
+        Phone: <input type="text" name="phone" placeholder="enter phone number"> <br> <br>
+        Password: <input type="text" name="pass" placeholder="enter password"> <br> <br>
+        Repeat Password: <input type="text" name="rep" placeholder="enter repeat  password"> <br> <br>
+        <button type="button" onclick="jcheck()">Submit</button>
+       </fieldset> 
+    </form>
+
+<script>
+ class validate{
+    constructor (name, email, phone,password, repeat){
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.password = password;
+        this.repeat = repeat;
+    }
+     
+    vali(){
+        if(this.password !=this.repeat){
+            return false;
+
+        }else{
+            return true; 
+        }
+    }
+}
+
+    function jcheck(){
+        let name = document.jform.name.value;
+        let email = document.jform.email.value;
+        let phone = document.jform.phone.value;
+        let password = document.jform.pass.value;
+        let repeat = document.jform.rep.value;
+
+         let obj = new validate (name,email,phone,password, repeat);{
+            
+            if (name == ""){
+                document.getElementById("show").innerHTML= "<b> Enter name name</b>";
+            }else if( email == ""){
+                document.getElementById("show").innerHTML= "<b> Enter email</b>";
+            } else if( phone == ""){
+                document.getElementById("show").innerHTML= "<b> Enter phone</b>";
+            }else if( password == ""){
+                document.getElementById("show").innerHTML= "<b> Enter password</b>";
+            }else if( repeat == ""){
+                document.getElementById("show").innerHTML= "<b> Enter password again</b>";
+            }
+            
+            
+            else if(obj.vali()==false){ 
+                document.getElementById("show").innerHTML= "<b> Password did not matched</b>";
+                
+            } else{
+                document.getElementById("show").innerHTML= " <b> Login from is valid </b>";
+            }
+
+
+         }
+      
+    }
+
+
+
+ 
+</script>
+<div id="show"></div>
+</body>
+</html>

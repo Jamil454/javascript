@@ -1,0 +1,51 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="show"></div>
+    <script>
+        function maxCheck() {
+            let num1 = prompt("Enter first number", "");
+            let num2 = prompt("Enter 2nd number", "");
+            let num3 = prompt("Enter 3rd number", "");
+
+            let numx = parseInt(num1);
+            let numy = parseInt(num2);
+            let numz = parseInt(num3);
+
+            const x = [numx, numy, numz];
+
+            let max = x[0];
+            let min = x[0];
+
+            for (let i = 0; i < x.length; i++) {
+                if (x[i] > max) {
+                    max = x[i];
+                }
+            }
+            for (let i = 0; i < x.length; i++) {
+                if (x[i] < min) {
+                    min = x[i];
+                }
+            }
+            document.getElementById("show").innerHTML = "The max number from " + numx + ", " + 
+            numy+", "+numz+ " is " + "<b>" + max + "</b>" + ".<br> The min number from " + numx + ", "
+             + numy+", "+numz+ " is " + "<b>" + min + "</b>" + ".";
+        }
+
+
+    </script>
+
+    <button onclick="maxCheck()">Check</button>
+
+</body>
+
+</html>

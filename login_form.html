@@ -1,0 +1,76 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrong{
+            color: red;
+        }
+        .right{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ans to the qn no.2</h1>
+
+    <form name="lform">
+        <fieldset style="width: fit-content;">
+            <h3>Login From</h3>
+        Email: <br> <input type="text" name="email" placeholder="Enter email"> <br>
+        Password: <br> <input type="text" name="pass" placeholder="Enter password"><br>
+        <button type="button" onclick="formCatch()">Submit</button>
+    </fieldset>
+    </form>
+
+    <script>
+        class loginVaidation{
+            constructor(email, password){
+                this.mail = email;
+                this.pass = password;
+            }
+
+            validate(){
+                let pattern = /[A-z0-9]+@[a-z]+\.[a-z]/;
+                let result = this.mail.search(pattern);
+
+                if(result == -1){
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+        }
+
+        function formCatch(){
+            let email = document.lform.email.value;
+            let pass = document.lform.pass.value;
+
+            let obj = new loginVaidation(email, pass);
+
+            if(email == ""){
+                document.getElementById("show").innerHTML = "<b class='wrong'>Enter email address.</b>";
+            }
+            else if (obj.validate() == false){
+                document.getElementById("show").innerHTML = "<b class='wrong'>Email address is wrong.</b>";
+            }
+            else if (pass == ""){
+                document.getElementById("show").innerHTML = "<b class='wrong'>Enter password.</b>";
+            }
+            else if (pass.length < 8){
+                document.getElementById("show").innerHTML = "<b class='wrong'>Password is too short.</b>";
+            }
+            else{
+                document.getElementById("show").innerHTML = "<b class='right'>Email address is valid.</b>";
+            }
+        }
+    </script>
+    <div id="show"></div>
+    
+</body>
+</html>

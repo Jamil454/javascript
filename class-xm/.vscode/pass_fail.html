@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Ans to the Qn:01</h2>
+    <form action="" name="jform">
+        <fieldset style="width: fit-content;">
+            <h2> Students Result Check</h2>
+
+            MCQ: <input type="text" name="mcq" placeholder="enter mcq marks"> <br> <br>
+             Evidence:<input type="text" name="evi" placeholder="enter evidence marks"> <br> <br>
+             Descriptive: <input type="text" name="des" placeholder="enter descriptive marks"> <br> <br>
+             <button type="button" onclick="pass()">Submit</button>
+        </fieldset>
+    </form>
+
+    <script>
+        function pass(){
+            let mcq = document.jform.mcq.value;
+            let evi = document.jform.evi.value;
+            let des = document.jform.des.value; 
+
+        
+
+        if(mcq>=80 && evi>=60 && des >=60){
+            document.getElementById("show").innerHTML = "<b>You have passed</b>";
+        }
+        else{
+            document.getElementById("show").innerHTML = "<b>You have failed</b>";  
+        }
+    }
+    </script>
+    <div id="show"></div>
+</body>
+</html>

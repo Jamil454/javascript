@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <form action="" name="myform">
+        <fieldset style="width: fit-content;">
+            Name: <input type="text" name="name" placeholder="enter name"> <br> <br>
+            
+            Address: <br> <textarea name="address" id=""></textarea> <br> <br>
+            Gender: <input type="radio" name="gender" value="male">male
+            <input type="radio" name="gender" value="female">female <br> <br>
+
+           Programme:
+            <input type="checkbox" value="PHP" name="PHP" class="course">PHP
+            <input type="checkbox"  value="Javascript" name="Javascript" class="course">Javascript
+            <input type="checkbox" value="Python" name="Python" class="course">Python
+            <input type="checkbox" value="Oracle" name="Oracle" class="course">Oracle <br> <br>
+
+            Location: <br>
+            <select name="location">
+                <option value="select location">select location</option>
+                <option value="banani">Banani</option>
+                <option value="dhanmondi">Dhanmondi</option>
+                <option value="mirpur">Mirpur</option> 
+
+            </select><br> <br>
+
+            <button type="button" onclick="data()">submit</button>
+        </fieldset>
+
+    </form>
+
+    <script>
+        class formData {
+            constructor(name, address, gender, course, location) {
+                this.name = name;
+                
+                this.address = address;
+                this.gender = gender;
+                this.course = course;
+                this.location = location;
+            }
+
+            getdata() {
+                let jamil = window.open("", "abc", "width=300, height=300");
+
+                let output = "<h3> Trainee Information </h3>";
+                output += "Name: " + this.name + "<br>";
+               
+                output += "Address: " + this.address + "<br>";
+                output += "Gender: " + this.gender + "<br>";
+                output += "Courses: " + this.course + "<br>";
+                output += "Location: " + this.location + "<br>";
+
+                jamil.document.write(output);
+
+            }
+
+        }
+
+        function data() {
+
+            let name = document.myform.name.value;
+            
+            let address = document.myform.address.value
+            let gender = document.myform.gender.value;
+            let location = document.myform.location.value;
+
+           
+            let win = "";
+            let a = document.getElementsByClassName("course");
+          
+            for (let i = 0; i < a.length; i++) {
+                if (a[i].checked) {
+                    win += a[i].value + ", ";
+                }
+
+            } 
+
+
+            let obj = new formData(name, address, gender, win, location);
+            obj.getdata();
+
+        }
+    </script>
+
+
+</body>
+
+</html>

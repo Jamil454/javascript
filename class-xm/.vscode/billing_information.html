@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="" name="jform">
+        <fieldset style="width: fit-content;">
+            <h2>Billing  Information</h2>
+        First-Name: <input type="text" name="fname" placeholder="enter first name"> <br> <br> 
+        Last-Name: <input type="text" name="lname" placeholder="enter last name"> <br> <br> 
+        Sex: <input type="radio" name="gender" value="male">Male
+        <input type="radio" name="gender" value="female">Female <br> <br>
+        Language: <input type="checkbox"  value="English" class="lan">English 
+        <input type="checkbox" value="Bangla" class="lan">Bangla 
+        <input type="checkbox"  value="French" class="lan">French 
+        <input type="checkbox" value="Spanish" class="lan">Spanish  <br> <br>
+
+          Address: <br> <textarea name="add" id=""></textarea>  <br> <br>
+          District: <select name="district" id="">
+            <option value="">select one</option>
+            <option value="Dhaka">Dhaka</option>
+            <option value="Cumilla">Cumilla</option>
+            <option value="Sylhet">Sylhet</option>
+          </select> <br> <br>
+          Zip Code: <input type="text" name="zip" placeholder="enter zip code"> <br> <br>
+          <button type="button" onclick="fata()"> Submit</button> 
+        </fieldset>
+    </form>
+
+    <script>
+        class billvalid {
+            constructor(fname, lname, sex,lan,address, district, zip){
+                this.fname = fname;
+                this.lname = lname;
+                this.sex = sex;
+                this.lan = lan;
+                this.address = address;
+                this.district = district;
+                this.zip = zip;
+            }
+            formation(){
+                let wina = window.open("", "j" ,"height=400, width= 400");
+                let output = "<h3> Billing Information </h3>";
+                output += "Fname:"  + this.fname + "<br>";
+                output += "Lname:"  + this.lname + "<br>";
+                output += "Sex:"  + this.sex + "<br>";
+                output += "Language:"  + this.lan + "<br>";
+                output += "Address:"  + this.address + "<br>";
+                output += "District:"  + this.district + "<br>";
+                output += "Zip:"  + this.zip + "<br>";
+
+                wina.document.write(output);
+            }
+        }
+
+function fata() {
+
+let fname = document.jform.fname.value;
+let lname = document.jform.lname.value;
+
+let address = document.jform.add.value
+let sex = document.jform.gender.value;
+let district = document.jform.district.value;
+let zip = document.jform.zip.value;
+
+
+let win = "";
+let a = document.getElementsByClassName("lan");
+
+for (let i = 0; i < a.length; i++) {
+    if (a[i].checked) {
+        win += a[i].value + ", ";
+    }
+
+} 
+
+
+let obj = new billvalid(fname,lname, address, sex, win, district, zip);
+obj.formation();
+
+}
+    </script>
+</body>
+</html>

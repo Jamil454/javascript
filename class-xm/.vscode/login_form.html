@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+   
+    <form action="" name="ffrom">
+
+        <fieldset style="width: fit-content;">
+
+            <h2> Login Form</h2>
+
+            Username: <input type="text" name="mail" placeholder="enter username"> <br> <br> 
+            Password: <input type="text" name="pass" placeholder="enter password"> <br> <br>
+            <button type="button" onclick="lgform()">Submit</button>
+        </fieldset>
+    </form>
+    <script>
+        class fo{
+            constructor ( email, password){
+                this.mail = email;
+                this.pass = password;
+            }
+            valid(){
+                if(this.mail.length<=6){
+                    return false;
+                } else if (this.pass.length<8){
+                    return false;
+                }else{
+                    return true;
+                }
+                
+            }
+        }
+        function  lgform(){
+            let nam = document.ffrom.mail.value;
+            let pass = document.ffrom.pass.value;
+            let obj = new fo (nam, pass);
+
+            if (nam == ""){
+                document.getElementById("show").innerHTML= "<b> Enter user name</b>";
+            }else if( pass == ""){
+                document.getElementById("show").innerHTML= "<b> Enter password</b>";
+            } else if(obj.valid()==false){ 
+                document.getElementById("show").innerHTML= "<b> User name must be 6 characters</b>";
+                
+            } else{
+                document.getElementById("show").innerHTML= " <b> Login from is valid </b>";
+            }
+
+        }
+    </script>
+     <div id="show"></div>
+</body>
+</html>
